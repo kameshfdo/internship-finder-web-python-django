@@ -11,16 +11,16 @@ def register_applicant(request):
     if request.method =='POST':
         form = RegisterUserForm(request.POST)
         if form.is_valid():
-            var = form.save(commit=False)
-            var.is_applicant=True
-            var.username=var.email
-            var.save()
-            Resume.objects.create(user=var)
-            messages.info(request,'Your account has been created.')
+            user = form.save(commit=False)
+            user.is_applicant = True
+            user.username = user.email
+            user.save()
+            Resume.objects.create(user=user)
+            messages.info(request,'Your account has been created.plaese login')
             return redirect('login')
         else:
             messages.warning(request,'Somthing went worng')
-            return redirect(register-applicant)
+            return redirect('register_applicant')
     else:
         form = RegisterUserForm()
         context = {'form':form}
@@ -40,7 +40,7 @@ def register_recruiter(request):
             return redirect('login')
         else:
             messages.warning(request,'Somthing went worng')
-            return redirect(register-recruiter)
+            return redirect('register_recruiter')
     else:
         form = RegisterUserForm()
         context = {'form':form}
@@ -57,7 +57,7 @@ def login_user(request):
             login(request,user)
             return redirect('dashboard')
         else:
-            messages.warning(request,"Something went wrong.")
+            messages.warning(request,"something went wrong.")
             return redirect('login')
     else:
         return render(request,'users/login.html')
@@ -65,6 +65,6 @@ def login_user(request):
 #logout user
 def logout_user(request):
     logout(request)
-    messages.info(request,"Your session has been ended.")
+    messages.info(request,"your session has been ended.")
     return redirect('login')
  
