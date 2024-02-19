@@ -19,7 +19,7 @@ def register_applicant(request):
             messages.info(request,'Your account has been created.Please Login')
             return redirect('login')
         else:
-            messages.warning(request,'Somthing went worng')
+            messages.warning(request,'Somthing went wrong')
             return redirect('register-applicant')
     else:
         form = RegisterUserForm()
@@ -36,6 +36,7 @@ def register_recruiter(request):
             var.is_recruiter=True
             var.username=var.email
             var.save()
+            print(var)
             Company.objects.create(user=var)
             messages.info(request,'Your account has been created.Please login')
             return redirect('login')
