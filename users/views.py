@@ -11,7 +11,6 @@ def register_applicant(request):
     if request.method =='POST':
         form = RegisterUserForm(request.POST)
         if form.is_valid():
-<<<<<<< HEAD
             var = form.save(commit=False)
             var.is_applicant=True
             var.username=var.email
@@ -22,22 +21,11 @@ def register_applicant(request):
         else:
             messages.warning(request,'Somthing went worng')
             return redirect('register-applicant')
-=======
-            user = form.save(commit=False)
-            user.is_applicant = True
-            user.username = user.email
-            user.save()
-            Resume.objects.create(user=user)
-            messages.info(request,'Your account has been created.plaese login')
-            return redirect('login')
-        else:
-            messages.warning(request,'Somthing went worng')
-            return redirect('register_applicant')
->>>>>>> f0d5c9af9b04e7e26033f178bb364f2f9e9d633d
     else:
         form = RegisterUserForm()
         context = {'form':form}
         return render(request,'users/register_applicant.html',context)
+    
     
 #register recuriter only
 def register_recruiter(request):
@@ -53,16 +41,12 @@ def register_recruiter(request):
             return redirect('login')
         else:
             messages.warning(request,'Somthing went worng')
-<<<<<<< HEAD
             return redirect('register-recruiter')
-=======
-            return redirect('register_recruiter')
->>>>>>> f0d5c9af9b04e7e26033f178bb364f2f9e9d633d
     else:
         form = RegisterUserForm()
         context = {'form':form}
         return render(request,'users/register_recruiter.html',context)
-
+    
 #login a user
 def login_user(request):
     if request.method =='POST':
@@ -74,14 +58,14 @@ def login_user(request):
             login(request,user)
             return redirect('dashboard')
         else:
-            messages.warning(request,"something went wrong.")
+            messages.warning(request,"Something went wrong.")
             return redirect('login')
+        
     else:
         return render(request,'users/login.html')
     
 #logout user
 def logout_user(request):
     logout(request)
-    messages.info(request,"your session has been ended.")
+    messages.info(request,"Your session has been ended.")
     return redirect('login')
- 

@@ -7,23 +7,6 @@
 <form class="p-4 p-md-5 border rounded-3 bg-light" method="POST">
     {% csrf_token %}
 
-<<<<<<< HEAD
-        <div class="form-floating mb-3">
-            {% render_field form.email class="form-control" %}
-            <label for="floatingInput">Email address</label>
-        </div>   
-        
-        <div class="form-floating mb-3">
-            {% render_field form.password1 class="form-control" %}
-            <label for="floatingInput">Enter Password</label>
-        </div>   
-
-        <div class="form-floating mb-3">
-            {% render_field form.password2 class="form-control" %}
-            <label for="floatingInput">Confirm Password</label>
-        </div>   
-        
-=======
     <div class="form-floating mb-3">
         {% render_field form.email class="form-control" %}
         <label for="floatingInput">Email address</label>
@@ -33,7 +16,6 @@
         {% render_field form.password1 class="form-control" %}
         <label for="floatingInput">Enter Password</label>
     </div>
->>>>>>> f0d5c9af9b04e7e26033f178bb364f2f9e9d633d
 
     <div class="form-floating mb-3">
         {% render_field form.password2 class="form-control" %}
@@ -41,19 +23,12 @@
     </div>
 
 
-<<<<<<< HEAD
-</form>
-
-{% endblock content %}
-=======
-
     <button class="w-108 btn btn-lg btn-primary" type="submit">Sign Up</button>
     <hr class="my-4">
 
     <!-- <small class="text-muted"> By clicking Sign up, you agree to the terms of use.</small> -->
-    <small class="text-muted">Already have an account? <a href="[% url 'login' %]">Sign In</a></small>
+    <small class="text-muted">Already have an account? <a href="{% url 'login' %}">Sign In</a></small>
 
 </form>
 
 {% endblock content %}
->>>>>>> f0d5c9af9b04e7e26033f178bb364f2f9e9d633d
