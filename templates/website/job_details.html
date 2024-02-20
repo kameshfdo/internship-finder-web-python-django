@@ -8,18 +8,18 @@
         <div class="container-fluid py-5">
             <h2 class="display-5 fw-bold">{{job.title}}</h2>
             <p class="col-md-8 fs-5 mt-3">
-                {{job.state}} | Remote | NGN{{job.salary|intcomma}}
+                {{job.state}} | Remote | SRI LANKA{{job.salary|intcomma}}
             </p>
             {% if user.is_authenticated and request.user.is_applicant and request.user.is_verified %}
-                {% if has_applied == False %}
-                    <a href="{% url 'apply-to-job' job.pk %}" class="btn btn-primary btn-lg">Apply Now</a>
-                {% else %}
-                    <p><span class="text-danger">You have already applied for this job</span></p>
-                    <a href="{% url 'delete-application' job.pk %}" class="btn btn-primary btn-lg">Revoke Application</a>
-                {% endif %}
+            {% if has_applied == False %}
+            <a href="{% url 'apply-to-job' job.pk %}" class="btn btn-primary btn-lg">Apply Now</a>
+            {% else %}
+            <p><span class="text-danger">You have already applied for this job</span></p>
+            <a href="{% url 'delete-application' job.pk %}" class="btn btn-primary btn-lg">Revoke Application</a>
+            {% endif %}
             {% elif user.is_authenticated and request.user.is_recruiter and request.user.is_verified %}
             {% else %}
-                <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Login to Apply</a>
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Login to Apply</a>
             {% endif %}
         </div>
     </div>
@@ -27,9 +27,9 @@
 
 <div>
     <section>
-        <h5>Job Requiements</h5>
+        <h5>Intern Requiements</h5>
         <p>
-           {{job.requirements}}
+            {{job.requirements}}
         </p>
     </section>
 </div> <br>
@@ -38,7 +38,7 @@
     <section>
         <h5>Ideal Candidate</h5>
         <p>
-           {{job.ideal_candidate}}
+            {{job.ideal_candidate}}
         </p>
     </section>
 </div> <br>

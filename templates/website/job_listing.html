@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-{% load humanize %} 
+{% load humanize %}
 
 {% block content %}
 
 <section>
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h2 class="display-5 fw-bold">Django Jobs. Get Hired Quickly!</h2>
+            <h2 class="display-5 fw-bold">INTERNSHIPS FINDER. Get Hired Quickly!</h2>
             <p class="col-md-8 fs-5 mt-3">
-                All Available Jobs
+                All Available INTERNSHIPS
             </p>
         </div>
     </div>
@@ -21,12 +21,12 @@
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">{{job.title}}</h5>
-                <p class="card-text">Job Location : {{job.location}}</p>                   
+                <p class="card-text">Intern Location : {{job.location}}</p>
                 <p class="card-text"> {{job.salary| intcomma}}</p>
                 <p class="card-text"> Posted by (Company Name): {{job.company}}</p>
 
-                <a class="btn btn-primary btn-sm" href = "{% url 'job-details' job.pk %}"> View Details </a>
-                
+                <a class="btn btn-primary btn-sm" href="{% url 'job-details' job.pk %}"> View Details </a>
+
 
             </div>
             <div class="card-footer">
@@ -34,7 +34,7 @@
             </div>
 
 
-            
+
         </div>
     </div>
     {% endfor %}
@@ -42,5 +42,3 @@
 </div>
 <br>
 {% endblock content %}
-
-

@@ -12,13 +12,15 @@ class Job(models.Model):
     )
 
     state_choices = (
-        ('Karnataka', 'Karnataka'),
-        ('Assam', 'Assam'),
-        ('Gujarat', 'Gujarat'),
-        ('Kashmir', 'Kashmir'),
-        ('Tamil Nadu', 'Tamil Nadu'),
-        ('Bihar', 'Bihar'),
-        ('Uttar Pradesh', 'Uttar Pradesh')
+        ('colombo', 'colombo'),
+        ('ragama', 'ragama'),
+        ('gampha', 'gampha'),
+        ('kurunegala', 'kurunegala'),
+        ('kelaniya', 'kelaniya'),
+        ('rathmalana', 'rathmalana'),
+        ('malabe', 'malabe'),
+        ('ja-ela', 'ja-ela'),
+        ('nugegoda', 'nugegoda')
     )
 
     industry_choices = (
